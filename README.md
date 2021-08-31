@@ -52,6 +52,7 @@ yarn build
 composer dump-env dev
 # Set database credentials in .env.local.php
 bin/console sylius:install -n
+bin/console lexik:jwt:generate-keypair
 symfony serve
 open http://127.0.0.1:8000/
 ```
