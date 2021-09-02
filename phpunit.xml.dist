@@ -27,6 +27,6 @@
         <server name="IS_DOCTRINE_ORM_SUPPORTED" value="true" />
         <server name="ESCAPE_JSON" value="true" />
         <server name="KERNEL_CLASS" value="App\Kernel" />
-<!--        <server name="DATABASE_URL" value="mysql://root@127.0.0.1/sylius_%kernel.environment%" />-->
+        <server name="DATABASE_URL" value="mysql://websc:websc@127.0.0.1/sylius_%kernel.environment%" />
     </php>
 </phpunit>
