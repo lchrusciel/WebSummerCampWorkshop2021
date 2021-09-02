@@ -10,4 +10,23 @@
             <directory>tests</directory>
         </testsuite>
     </testsuites>
+
+    <php>
+        <ini name="error_reporting" value="-1" />
+
+        <!-- ###+ symfony/framework-bundle ### -->
+        <env name="APP_ENV" value="test"/>
+        <env name="APP_SECRET" value="EDITME"/>
+        <env name="SHELL_VERBOSITY" value="-1" />
+        <!-- ###- symfony/framework-bundle ### -->
+
+        <env name="JWT_SECRET_KEY" value="%kernel.project_dir%/config/jwt/private-test.pem" />
+        <env name="JWT_PUBLIC_KEY" value="%kernel.project_dir%/config/jwt/public-test.pem" />
+        <env name="JWT_PASSPHRASE" value="ALL_THAT_IS_GOLD_DOES_NOT_GLITTER_NOT_ALL_THOSE_WHO_WANDER_ARE_LOST" />
+
+        <server name="IS_DOCTRINE_ORM_SUPPORTED" value="true" />
+        <server name="ESCAPE_JSON" value="true" />
+        <server name="KERNEL_CLASS" value="App\Kernel" />
+<!--        <server name="DATABASE_URL" value="mysql://root@127.0.0.1/sylius_%kernel.environment%" />-->
+    </php>
 </phpunit>

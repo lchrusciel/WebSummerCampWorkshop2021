@@ -1,0 +1,4 @@
+App\Entity\Supplier:
+    web_summer_camp:
+        name: 'Web Summer Camp'
+        code: 'web-summer-camp'

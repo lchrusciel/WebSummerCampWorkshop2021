@@ -1,0 +1,36 @@
+{
+    "@context": "\/api\/v2\/contexts\/Order",
+    "@id": "\/api\/v2\/shop\/orders\/@string@",
+    "@type": "Order",
+    "customer": "\/api\/v2\/shop\/customers\/@integer@",
+    "channel": "\/api\/v2\/shop\/channels\/WEB",
+    "payments": [],
+    "shipments": [],
+    "currencyCode": "USD",
+    "localeCode": "en_US",
+    "checkoutState": "completed",
+    "paymentState": "paid",
+    "shippingState": "shipped",
+    "tokenValue": "@string@",
+    "id": @integer@,
+    "number": "000000001",
+    "items": [
+        {
+            "@id": "\/api\/v2\/shop\/order-items\/@integer@",
+            "@type": "OrderItem",
+            "variant": "\/api\/v2\/shop\/product-variants\/MUG_BLUE",
+            "productName": "Mug",
+            "id": @integer@,
+            "quantity": 1,
+            "unitPrice": 2000,
+            "total": 2000,
+            "subtotal": 2000
+        }
+    ],
+    "itemsTotal": 2000,
+    "total": 2000,
+    "state": "fulfilled",
+    "taxTotal": 0,
+    "shippingTotal": 0,
+    "orderPromotionTotal": 0
+}

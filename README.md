@@ -11,7 +11,12 @@ About
 
 Welcome to the Developing headless e-commerce with Sylius and API Platform workshop!
 
-This repository contains a pre-installed Sylius-Standard installation and will be used as 
+This repository contains a pre-installed Sylius-Standard installation and will be used as main play ground for our Workshop.
+This workshop contains 10 tasks - called adventures. Each adventure is described in the `\App\Tests\Api\AdventuresTest` class as a single test.
+During the workshop we will uncomment one test at the given moment of time and try to make them green ✅. Once this will be achieved
+you may either start code refactoring or go to the next task.
+
+Have fun!
 
 Documentation
 -------------

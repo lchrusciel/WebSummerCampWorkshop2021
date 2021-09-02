@@ -1,0 +1,105 @@
+App\Entity\Channel\Channel:
+    channel_web:
+        code: 'WEB'
+        name: 'Web Channel'
+        hostname: 'localhost'
+        description: 'Lorem ipsum'
+        baseCurrency: '@currency_usd'
+        defaultLocale: '@locale_en'
+        locales: ['@locale_en', '@locale_pl']
+        color: 'black'
+        enabled: true
+        taxCalculationStrategy: 'order_items_based'
+
+App\Entity\Currency\Currency:
+    currency_usd:
+        code: 'USD'
+
+App\Entity\Locale\Locale:
+    locale_en:
+        code: 'en_US'
+    locale_pl:
+        code: 'pl_PL'
+    locale_de:
+        code: 'de_DE'
+
+App\Entity\User\ShopUser:
+    shop_user_{oliver}:
+        plainPassword: "sylius"
+        roles: [ROLE_USER]
+        enabled: true
+        customer: "@customer_<current()>"
+        username: "<current()>\\@doe.com"
+        usernameCanonical: "<current()>\\@doe.com"
+
+App\Entity\Customer\Customer:
+    customer_{oliver}:
+        firstName: "<current()>"
+        lastName: "Doe"
+        email: "<current()>\\@doe.com"
+        emailCanonical: "<current()>\\@doe.com"
+        birthday: "<(new \\DateTime())>"
+
+App\Entity\Product\Product:
+    product_mug:
+        code: 'MUG'
+        channels: ['@channel_web']
+        currentLocale: 'en_US'
+        translations:
+            en_US: '@product_translation_mug'
+        options: ['@product_option_color']
+
+App\Entity\Product\ProductTranslation:
+    product_translation_mug:
+        slug: 'mug'
+        locale: 'en_US'
+        name: 'Mug'
+        description: '<paragraph(2)>'
+        translatable: '@product_mug'
+
+App\Entity\Product\ProductVariant:
+    product_variant_mug_blue:
+        code: 'MUG_BLUE'
+        product: '@product_mug'
+        currentLocale: 'en_US'
+        translations:
+            en_US: '@product_variant_translation_mug'
+        optionValues: ['@product_option_value_color_blue']
+        channelPricings:
+            WEB: '@channel_pricing_product_variant_mug_blue_web'
+        onHand: 10
+        onHold: 5
+
+App\Entity\Product\ProductVariantTranslation:
+    product_variant_translation_mug:
+        locale: 'en_US'
+        name: 'Blue Mug'
+        translatable: '@product_variant_mug_blue'
+
+App\Entity\Channel\ChannelPricing:
+    channel_pricing_product_variant_mug_blue_web:
+        channelCode: 'WEB'
+        price: 2000
+
+App\Entity\Product\ProductOption:
+    product_option_color:
+        code: 'COLOR'
+
+App\Entity\Product\ProductOptionValue:
+    product_option_value_color_blue:
+        code: 'COLOR_BLUE'
+        currentLocale: 'en_US'
+        fallbackLocale: 'en_US'
+        option: '@product_option_color'
+        translations:
+            - '@product_option_value_translation_blue'
+
+App\Entity\Product\ProductOptionValueTranslation:
+    product_option_value_translation_blue:
+        locale: 'en_US'
+        value: 'Blue'
+        translatable: '@product_option_value_color_blue'        
+
+App\Entity\Addressing\Country:
+    country_US:
+        code: 'US'

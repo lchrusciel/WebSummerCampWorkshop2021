@@ -1,0 +1,16 @@
+{
+    "@context": "\/api\/v2\/contexts\/Supplier",
+    "@id": "\/api\/v2\/shop\/suppliers",
+    "@type": "hydra:Collection",
+    "hydra:member": [
+        {
+            "@id": "\/api\/v2\/shop\/suppliers\/web-summer-camp",
+            "@type": "Supplier",
+            "id": @integer@,
+            "name": "Web Summer Camp",
+            "code": "web-summer-camp"
+        }
+    ],
+    "hydra:totalItems": 1
+
+}

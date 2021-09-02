@@ -1,0 +1,23 @@
+{
+    "@context": "\/api\/v2\/contexts\/Order",
+    "@id": "\/api\/v2\/shop\/orders\/@string@",
+    "@type": "Order",
+    "channel": "\/api\/v2\/shop\/channels\/WEB",
+    "payments": [],
+    "shipments": [],
+    "currencyCode": "USD",
+    "localeCode": "en_US",
+    "checkoutState": "cart",
+    "paymentState": "cart",
+    "shippingState": "cart",
+    "tokenValue": "@string@",
+    "id": @integer@,
+    "origin": "WebSummerCamp",
+    "items": [],
+    "itemsTotal": 0,
+    "total": 0,
+    "state": "cart",
+    "taxTotal": 0,
+    "shippingTotal": 0,
+    "orderPromotionTotal": 0
+}

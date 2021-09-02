@@ -1,0 +1,4 @@
+{
+    "code": 404,
+    "message": "No route found for \"GET http:\/\/localhost\/api\/v2\/shop\/taxons\""
+}
