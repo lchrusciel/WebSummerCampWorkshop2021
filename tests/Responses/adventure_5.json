@@ -13,6 +13,7 @@
         "city": "Nebraska",
         "postcode": "12343"
     },
+    "origin": "WebSummerCamp",
     "payments": [],
     "shipments": [],
     "currencyCode": "USD",

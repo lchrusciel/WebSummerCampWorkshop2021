@@ -33,3 +33,8 @@ services:
     App\Controller\:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
+        
+    App\CommandHandler\PickupCartHandler:
+        decorates: Sylius\Bundle\ApiBundle\CommandHandler\Cart\PickupCartHandler
+        arguments:
+            - '@.inner'

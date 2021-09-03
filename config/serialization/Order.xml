@@ -8,5 +8,8 @@
         <attribute name="shippingAddress">
             <group>admin:cart:update</group>
         </attribute>
+        <attribute name="origin">
+            <group>admin:order:read</group>
+        </attribute>
     </class>
 </serializer>

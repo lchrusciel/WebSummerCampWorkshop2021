@@ -113,17 +113,17 @@ final class AdventuresTest extends JsonApiTestCase
 
         $this->assertResponse($response, 'adventure_6', Response::HTTP_NOT_FOUND);
     }
-//
-//    /** @test */
-//    public function it_automatically_assigns_origin_info_to_order(): void
-//    {
-//        $this->loadFixturesFromFiles(['test_data.yaml']);
-//
-//        $this->client->request('POST', '/api/v2/shop/orders', [], [], self::CONTENT_TYPE_HEADER, '{}');
-//        $response = $this->client->getResponse();
-//
-//        $this->assertResponse($response, 'adventure_7', Response::HTTP_CREATED);
-//    }
+
+    /** @test */
+    public function it_automatically_assigns_origin_info_to_order(): void
+    {
+        $this->loadFixturesFromFiles(['test_data.yaml']);
+
+        $this->client->request('POST', '/api/v2/shop/orders', [], [], self::CONTENT_TYPE_HEADER, '{}');
+        $response = $this->client->getResponse();
+
+        $this->assertResponse($response, 'adventure_7', Response::HTTP_CREATED);
+    }
 //
 //    /** @test */
 //    public function it_allows_for_order_origin_code_to_be_send_during_pickup_cart(): void

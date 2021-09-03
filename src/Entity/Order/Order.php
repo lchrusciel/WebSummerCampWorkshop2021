@@ -13,4 +13,18 @@ use Sylius\Component\Core\Model\Order as BaseOrder;
  */
 class Order extends BaseOrder
 {
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private ?string $origin;
+
+    public function getOrigin(): ?string
+    {
+        return $this->origin;
+    }
+
+    public function setOrigin(?string $origin): void
+    {
+        $this->origin = $origin;
+    }
 }
