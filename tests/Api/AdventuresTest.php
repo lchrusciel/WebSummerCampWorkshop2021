@@ -52,21 +52,21 @@ final class AdventuresTest extends JsonApiTestCase
         $this->assertResponse($response, 'adventure_3', Response::HTTP_OK);
     }
 
-//    /** @test */
-//    public function it_exposes_a_supplier_resource_with_sylius_and_api_platform(): void
-//    {
-//        $this->loadFixturesFromFiles(['test_data.yaml', 'supplier.yaml']);
-//
-//        $this->client->request('GET', '/api/v2/shop/suppliers', [], [], self::CONTENT_TYPE_HEADER);
-//        $response = $this->client->getResponse();
-//
-//        $this->assertResponse($response, 'adventure_4_1', Response::HTTP_OK);
-//
-//        $this->client->request('GET', '/api/v2/shop/suppliers/web-summer-camp', [], [], self::CONTENT_TYPE_HEADER);
-//        $response = $this->client->getResponse();
-//
-//        $this->assertResponse($response, 'adventure_4_2', Response::HTTP_OK);
-//    }
+    /** @test */
+    public function it_exposes_a_supplier_resource_with_sylius_and_api_platform(): void
+    {
+        $this->loadFixturesFromFiles(['test_data.yaml', 'supplier.yaml']);
+
+        $this->client->request('GET', '/api/v2/shop/suppliers', [], [], self::CONTENT_TYPE_HEADER);
+        $response = $this->client->getResponse();
+
+        $this->assertResponse($response, 'adventure_4_1', Response::HTTP_OK);
+
+        $this->client->request('GET', '/api/v2/shop/suppliers/web-summer-camp', [], [], self::CONTENT_TYPE_HEADER);
+        $response = $this->client->getResponse();
+
+        $this->assertResponse($response, 'adventure_4_2', Response::HTTP_OK);
+    }
 
 //    /** @test */
 //    public function it_exposes_shipping_address_on_order_update(): void

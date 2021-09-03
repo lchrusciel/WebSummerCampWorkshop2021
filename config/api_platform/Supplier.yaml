@@ -1,0 +1,13 @@
+App\Entity\Supplier:
+    attributes:
+        route_prefix: /shop
+#    routePrefix: /shop
+    collectionOperations:
+        get: ~
+    itemOperations:
+        get: ~
+    properties:
+        code:
+            identifier: true
+        id:
+            identifier: false
