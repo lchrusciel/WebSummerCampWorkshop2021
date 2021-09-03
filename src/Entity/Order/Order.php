@@ -16,7 +16,7 @@ class Order extends BaseOrder
     /**
      * @ORM\Column(type="string", nullable=true)
      */
-    private ?string $origin;
+    private ?string $origin = null;
 
     public function getOrigin(): ?string
     {

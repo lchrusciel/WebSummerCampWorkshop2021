@@ -136,35 +136,35 @@ final class AdventuresTest extends JsonApiTestCase
         $this->assertResponse($response, 'adventure_8', Response::HTTP_CREATED);
     }
 //
-//    /** @test */
-//    public function it_instantly_purchases_product(): void
-//    {
-//        $this->loadFixturesFromFiles(['test_data.yaml']);
-//
-//        $requestBody = json_encode([
-//            'productVariant' => '/api/v2/shop/product-variants/MUG_BLUE',
-//        ]);
-//
-//        $this->client->request('POST', '/api/v2/shop/purchase-request', [], [], self::CONTENT_TYPE_HEADER, $requestBody);
-//        $response = $this->client->getResponse();
-//
-//        $this->assertResponse($response, 'adventure_9_1', Response::HTTP_UNAUTHORIZED);
-//
-//        $token = $this->logInShopUser('oliver@doe.com');
-//
-//        $this->client->request(
-//            'POST',
-//            '/api/v2/shop/purchase-request',
-//            [],
-//            [],
-//            array_merge(self::CONTENT_TYPE_HEADER, ['HTTP_Authorization' => sprintf('Bearer %s', $token)]),
-//            $requestBody
-//        );
-//        $response = $this->client->getResponse();
-//
-//        $this->assertResponse($response, 'adventure_9_2', Response::HTTP_CREATED);
-//    }
-//
+    /** @test */
+    public function it_instantly_purchases_product(): void
+    {
+        $this->loadFixturesFromFiles(['test_data.yaml']);
+
+        $requestBody = json_encode([
+            'productVariant' => '/api/v2/shop/product-variants/MUG_BLUE',
+        ]);
+
+        $this->client->request('POST', '/api/v2/shop/purchase-request', [], [], self::CONTENT_TYPE_HEADER, $requestBody);
+        $response = $this->client->getResponse();
+
+        $this->assertResponse($response, 'adventure_9_1', Response::HTTP_UNAUTHORIZED);
+
+        $token = $this->logInShopUser('oliver@doe.com');
+
+        $this->client->request(
+            'POST',
+            '/api/v2/shop/purchase-request',
+            [],
+            [],
+            array_merge(self::CONTENT_TYPE_HEADER, ['HTTP_Authorization' => sprintf('Bearer %s', $token)]),
+            $requestBody
+        );
+        $response = $this->client->getResponse();
+
+        $this->assertResponse($response, 'adventure_9_2', Response::HTTP_CREATED);
+    }
+
 //    /** @test */
 //    public function it_instantly_purchases_product_with_mailing_support(): void
 //    {

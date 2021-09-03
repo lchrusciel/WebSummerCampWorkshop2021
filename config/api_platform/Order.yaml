@@ -2,6 +2,12 @@
     collectionOperations:
         shop_post:
             input: App\Command\PickupCart
+        shop_post_purchase:
+            method: POST
+            path: /shop/purchase-request
+            input: App\Command\PurchaseRequest
+            messenger: input
+            security: 'is_granted("ROLE_USER")'
     properties:
         shippingAddress:
             writable: true
