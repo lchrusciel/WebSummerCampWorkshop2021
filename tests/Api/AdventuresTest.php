@@ -41,17 +41,17 @@ final class AdventuresTest extends JsonApiTestCase
         $this->assertResponse($response, 'adventure_2', Response::HTTP_OK);
     }
 
-//    /** @test */
-//    public function it_calculates_stock_size_in_backend(): void
-//    {
-//        $this->loadFixturesFromFile('test_data.yaml');
-//
-//        $this->client->request('GET', '/api/v2/shop/product-variants/MUG_BLUE', [], [], self::CONTENT_TYPE_HEADER);
-//        $response = $this->client->getResponse();
-//
-//        $this->assertResponse($response, 'adventure_3', Response::HTTP_OK);
-//    }
-//
+    /** @test */
+    public function it_calculates_stock_size_in_backend(): void
+    {
+        $this->loadFixturesFromFile('test_data.yaml');
+
+        $this->client->request('GET', '/api/v2/shop/product-variants/MUG_BLUE', [], [], self::CONTENT_TYPE_HEADER);
+        $response = $this->client->getResponse();
+
+        $this->assertResponse($response, 'adventure_3', Response::HTTP_OK);
+    }
+
 //    /** @test */
 //    public function it_exposes_a_supplier_resource_with_sylius_and_api_platform(): void
 //    {
