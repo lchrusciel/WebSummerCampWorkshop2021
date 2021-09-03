@@ -30,17 +30,17 @@ final class AdventuresTest extends JsonApiTestCase
         $this->assertResponse($response, 'adventure_1', Response::HTTP_OK);
     }
 
-//    /** @test */
-//    public function it_hides_translations_of_the_product_and_exposes_them_directly(): void
-//    {
-//        $this->loadFixturesFromFile('test_data.yaml');
-//
-//        $this->client->request('GET', '/api/v2/shop/products/MUG', [], [], self::CONTENT_TYPE_HEADER);
-//        $response = $this->client->getResponse();
-//
-//        $this->assertResponse($response, 'adventure_2', Response::HTTP_OK);
-//    }
-//
+    /** @test */
+    public function it_hides_translations_of_the_product_and_exposes_them_directly(): void
+    {
+        $this->loadFixturesFromFile('test_data.yaml');
+
+        $this->client->request('GET', '/api/v2/shop/products/MUG', [], [], self::CONTENT_TYPE_HEADER);
+        $response = $this->client->getResponse();
+
+        $this->assertResponse($response, 'adventure_2', Response::HTTP_OK);
+    }
+
 //    /** @test */
 //    public function it_calculates_stock_size_in_backend(): void
 //    {
