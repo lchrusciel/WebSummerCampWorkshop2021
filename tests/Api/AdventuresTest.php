@@ -105,14 +105,14 @@ final class AdventuresTest extends JsonApiTestCase
         $this->assertResponse($response, 'adventure_5', Response::HTTP_OK);
     }
 
-//    /** @test */
-//    public function it_removes_of_get_taxon_collection_endpoint(): void
-//    {
-//        $this->client->request('GET', '/api/v2/shop/taxons', [], [], self::CONTENT_TYPE_HEADER);
-//        $response = $this->client->getResponse();
-//
-//        $this->assertResponse($response, 'adventure_6', Response::HTTP_NOT_FOUND);
-//    }
+    /** @test */
+    public function it_removes_of_get_taxon_collection_endpoint(): void
+    {
+        $this->client->request('GET', '/api/v2/shop/taxons', [], [], self::CONTENT_TYPE_HEADER);
+        $response = $this->client->getResponse();
+
+        $this->assertResponse($response, 'adventure_6', Response::HTTP_NOT_FOUND);
+    }
 //
 //    /** @test */
 //    public function it_automatically_assigns_origin_info_to_order(): void
