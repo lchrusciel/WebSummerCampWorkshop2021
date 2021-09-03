@@ -19,16 +19,16 @@ final class AdventuresTest extends JsonApiTestCase
 
     public const CONTENT_TYPE_HEADER = ['CONTENT_TYPE' => 'application/ld+json', 'HTTP_ACCEPT' => 'application/ld+json'];
 
-//    /** @test */
-//    public function it_exposes_stock_size_of_the_product_variant(): void
-//    {
-//        $this->loadFixturesFromFile('test_data.yaml');
-//
-//        $this->client->request('GET', '/api/v2/shop/product-variants/MUG_BLUE', [], [], self::CONTENT_TYPE_HEADER);
-//        $response = $this->client->getResponse();
-//
-//        $this->assertResponse($response, 'adventure_1', Response::HTTP_OK);
-//    }
+    /** @test */
+    public function it_exposes_stock_size_of_the_product_variant(): void
+    {
+        $this->loadFixturesFromFile('test_data.yaml');
+
+        $this->client->request('GET', '/api/v2/shop/product-variants/MUG_BLUE', [], [], self::CONTENT_TYPE_HEADER);
+        $response = $this->client->getResponse();
+
+        $this->assertResponse($response, 'adventure_1', Response::HTTP_OK);
+    }
 
 //    /** @test */
 //    public function it_hides_translations_of_the_product_and_exposes_them_directly(): void
