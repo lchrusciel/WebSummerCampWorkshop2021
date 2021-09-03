@@ -5,18 +5,50 @@
             xsi:schemaLocation="http://symfony.com/schema/dic/serializer-mapping https://symfony.com/schema/dic/serializer-mapping/serializer-mapping-1.0.xsd"
 >
     <class name="App\Entity\Product\Product">
+        <attribute name="productTaxons">
+            <group>app:shop:product:read</group>
+        </attribute>
         <attribute name="name">
-            <group>shop:product:read</group>
+            <group>app:shop:product:read</group>
         </attribute>
         <attribute name="slug">
-            <group>shop:product:read</group>
+            <group>app:shop:product:read</group>
         </attribute>
         <attribute name="description">
-            <group>shop:product:read</group>
+            <group>app:shop:product:read</group>
         </attribute>
         <attribute name="shortDescription">
-            <group>shop:product:read</group>
+            <group>app:shop:product:read</group>
         </attribute>
-        <attribute name="translations" ignore="true" />
+        <attribute name="mainTaxon">
+            <group>app:shop:product:read</group>
+        </attribute>
+        <attribute name="reviews">
+            <group>app:shop:product:read</group>
+        </attribute>
+        <attribute name="averageRating">
+            <group>app:shop:product:read</group>
+        </attribute>
+        <attribute name="images">
+            <group>app:shop:product:read</group>
+        </attribute>
+        <attribute name="id">
+            <group>app:shop:product:read</group>
+        </attribute>
+        <attribute name="code">
+            <group>app:shop:product:read</group>
+        </attribute>
+        <attribute name="variants">
+            <group>app:shop:product:read</group>
+        </attribute>
+        <attribute name="options">
+            <group>app:shop:product:read</group>
+        </attribute>
+        <attribute name="createdAt">
+            <group>app:shop:product:read</group>
+        </attribute>
+        <attribute name="updatedAt">
+            <group>app:shop:product:read</group>
+        </attribute>
     </class>
 </serializer>

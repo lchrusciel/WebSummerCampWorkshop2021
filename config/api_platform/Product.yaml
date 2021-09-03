@@ -1,0 +1,5 @@
+App\Entity\Product\Product:
+    itemOperations:
+        shop_get:
+            normalization_context:
+                groups: app:shop:product:read
