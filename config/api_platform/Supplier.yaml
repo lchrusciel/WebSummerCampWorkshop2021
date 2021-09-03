@@ -1,7 +1,6 @@
 App\Entity\Supplier:
     attributes:
         route_prefix: /shop
-#    routePrefix: /shop
     collectionOperations:
         get: ~
     itemOperations:

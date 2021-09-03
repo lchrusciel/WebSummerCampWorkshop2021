@@ -68,44 +68,42 @@ final class AdventuresTest extends JsonApiTestCase
         $this->assertResponse($response, 'adventure_4_2', Response::HTTP_OK);
     }
 
-//    /** @test */
-//    public function it_exposes_shipping_address_on_order_update(): void
-//    {
-//        $this->loadFixturesFromFiles(['test_data.yaml']);
-//
-//        $tokenValue = 'nAWw2jewpA';
-//
-//        /** @var MessageBusInterface $commandBus */
-//        $commandBus = $this->get('sylius.command_bus');
-//
-//        $pickupCartCommand = new PickupCart($tokenValue, 'en_US');
-//        $pickupCartCommand->setChannelCode('WEB');
-//        $commandBus->dispatch($pickupCartCommand);
-//
-//        $addItemToCartCommand = new AddItemToCart('MUG_BLUE', 3);
-//        $addItemToCartCommand->setOrderTokenValue($tokenValue);
-//        $commandBus->dispatch($addItemToCartCommand);
-//
-//        $data = json_encode([
-//            'shippingAddress' => [
-//                'firstName'=> 'TEST',
-//                'lastName'=> 'TEST',
-//                'phoneNumber'=> '666111333',
-//                'company'=> 'Potato Corp.',
-//                'countryCode'=> 'US',
-//                'provinceCode'=> null,
-//                'provinceName'=> null,
-//                'street'=> 'Top secret',
-//                'city'=> 'Nebraska',
-//                'postcode'=> '12343',
-//            ]
-//        ]);
-//
-//        $this->client->request('PUT', '/api/v2/shop/orders/' . $tokenValue, [], [], self::CONTENT_TYPE_HEADER, $data);
-//        $response = $this->client->getResponse();
-//
-//        $this->assertResponse($response, 'adventure_5', Response::HTTP_OK);
-//    }
+    /** @test */
+    public function it_exposes_shipping_address_on_order_update(): void
+    {
+        $this->loadFixturesFromFiles(['test_data.yaml']);
+
+        $tokenValue = 'nAWw2jewpA';
+
+        /** @var MessageBusInterface $commandBus */
+        $commandBus = $this->get('sylius.command_bus');
+
+        $pickupCartCommand = new PickupCart($tokenValue, 'en_US');
+        $pickupCartCommand->setChannelCode('WEB');
+        $commandBus->dispatch($pickupCartCommand);
+
+        $addItemToCartCommand = new AddItemToCart('MUG_BLUE', 3);
+        $addItemToCartCommand->setOrderTokenValue($tokenValue);
+        $commandBus->dispatch($addItemToCartCommand);
+
+        $data = json_encode([
+            'shippingAddress' => [
+                'firstName'=> 'TEST',
+                'lastName'=> 'TEST',
+                'phoneNumber'=> '666111333',
+                'company'=> 'Potato Corp.',
+                'countryCode'=> 'US',
+                'street'=> 'Top secret',
+                'city'=> 'Nebraska',
+                'postcode'=> '12343',
+            ],
+        ]);
+
+        $this->client->request('PUT', '/api/v2/shop/orders/' . $tokenValue, [], [], self::CONTENT_TYPE_HEADER, $data);
+        $response = $this->client->getResponse();
+
+        $this->assertResponse($response, 'adventure_5', Response::HTTP_OK);
+    }
 
 //    /** @test */
 //    public function it_removes_of_get_taxon_collection_endpoint(): void

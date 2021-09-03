@@ -1,0 +1,4 @@
+App\Entity\Order\Order:
+    properties:
+        shippingAddress:
+            writable: true
