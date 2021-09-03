@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace App\Tests\Api;
 
 use ApiTestCase\JsonApiTestCase;
+use App\Command\PickupCart;
 use Sylius\Bundle\ApiBundle\Command\Cart\AddItemToCart;
-use Sylius\Bundle\ApiBundle\Command\Cart\PickupCart;
 use Sylius\Component\Core\Test\Services\EmailChecker;
 use Sylius\Tests\Api\Utils\ShopUserLoginTrait;
 use Symfony\Component\Filesystem\Filesystem;
@@ -124,17 +124,17 @@ final class AdventuresTest extends JsonApiTestCase
 
         $this->assertResponse($response, 'adventure_7', Response::HTTP_CREATED);
     }
-//
-//    /** @test */
-//    public function it_allows_for_order_origin_code_to_be_send_during_pickup_cart(): void
-//    {
-//        $this->loadFixturesFromFiles(['test_data.yaml']);
-//
-//        $this->client->request('POST', '/api/v2/shop/orders', [], [], self::CONTENT_TYPE_HEADER, '{"origin": "Sibenik"}');
-//        $response = $this->client->getResponse();
-//
-//        $this->assertResponse($response, 'adventure_8', Response::HTTP_CREATED);
-//    }
+
+    /** @test */
+    public function it_allows_for_order_origin_code_to_be_send_during_pickup_cart(): void
+    {
+        $this->loadFixturesFromFiles(['test_data.yaml']);
+
+        $this->client->request('POST', '/api/v2/shop/orders', [], [], self::CONTENT_TYPE_HEADER, '{"origin": "Sibenik"}');
+        $response = $this->client->getResponse();
+
+        $this->assertResponse($response, 'adventure_8', Response::HTTP_CREATED);
+    }
 //
 //    /** @test */
 //    public function it_instantly_purchases_product(): void

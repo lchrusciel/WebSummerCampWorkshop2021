@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\CommandHandler;
 
+use App\Command\PickupCart;
 use App\Entity\Order\Order;
-use Sylius\Bundle\ApiBundle\Command\Cart\PickupCart;
 use Symfony\Component\Messenger\Handler\MessageHandlerInterface;
 
 final class PickupCartHandler implements MessageHandlerInterface
@@ -22,7 +22,7 @@ final class PickupCartHandler implements MessageHandlerInterface
         /** @var Order $cart */
         $cart = ($this->decoratedPickupCartHandler)($pickupCart);
 
-        $cart->setOrigin('WebSummerCamp');
+        $cart->setOrigin($pickupCart->origin ?? 'WebSummerCamp');
 
         return $cart;
     }

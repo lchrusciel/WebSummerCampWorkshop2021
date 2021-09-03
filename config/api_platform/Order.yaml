@@ -1,4 +1,7 @@
-App\Entity\Order\Order:
+'%sylius.model.order.class%':
+    collectionOperations:
+        shop_post:
+            input: App\Command\PickupCart
     properties:
         shippingAddress:
             writable: true
